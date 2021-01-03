@@ -71,7 +71,7 @@ void algorithm_A(Board board, Player player, int index[]){
                     if(board.get_capacity(i, j) == 5)
                         tmp += 5;
                     if(board.get_orbs_num(i, j) == (board.get_capacity(i, j)-1))
-                        tmp += 5;
+                        tmp += 8;
                 }
                 if(tmp > highest_score){
                     highest_score = tmp;
