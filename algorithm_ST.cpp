@@ -51,18 +51,17 @@ void algorithm_A(Board board, Player player, int index[]){
                             flag_has_chain = 1;
                             if(board.get_cell_color(new_i, new_j) != color){
                                 if(board.get_orbs_num(i, j) == (board.get_capacity(i, j) - 1))
-                                    tmp = 1000;
+                                    tmp += 1000;
                                 else
                                     tmp = -1000;
                             }
                             else if(board.get_cell_color(new_i, new_j) == color){
                                 if(board.get_orbs_num(i, j) == (board.get_capacity(i, j) - 1))
-                                    tmp = 1000;
+                                    tmp += 1000;
                                 else
                                     tmp += 5;
                             }
                         }
-                    
                     }
                 }
                 if(!flag_has_chain){
