@@ -40,29 +40,38 @@ void algorithm_A(Board board, Player player, int index[]){
         for(int j=0; j<6; j++){
             int tmp = 0;
             if(board.get_cell_color(i, j) == color || board.get_cell_color(i, j) == 'w'){
-                int flag_dangerous = 1;
+                int flag_has_chain = 0;
                 tmp += board.get_orbs_num(i, j);
                 
                 for(int k=0; k<8; k++){
                     int new_i = i + dir_x[k];
                     int new_j = j + dir_y[k];
                     if(new_i >= 0 && new_i <= 4 && new_j >= 0 && new_j <= 5){
-                        if(board.get_cell_color(new_i, new_j) != color && board.get_orbs_num(new_i, new_j) == (board.get_capacity(new_i, new_j) - 1)){
-                            tmp -= (5-board.get_capacity(i, j));
-                            flag_dangerous = 0;
+                        if(board.get_orbs_num(new_i, new_j) == (board.get_capacity(new_i, new_j) - 1)){
+                            flag_has_chain = 1;
+                            if(board.get_cell_color(new_i, new_j) != color){
+                                if(board.get_orbs_num(i, j) == (board.get_capacity(i, j) - 1))
+                                    tmp = 1000;
+                                else
+                                    tmp = -1000;
+                            }
+                            else if(board.get_cell_color(new_i, new_j) == color){
+                                if(board.get_orbs_num(i, j) == (board.get_capacity(i, j) - 1))
+                                    tmp = 1000;
+                                else
+                                    tmp += 5;
+                            }
                         }
-                        if(board.get_cell_color(new_i, new_j) == color){
-                            tmp += 3;
-                        }
+                    
                     }
                 }
-                if(flag_dangerous){
+                if(!flag_has_chain){
                     if(board.get_capacity(i, j) == 3)
-                        tmp += 3;
+                        tmp += 10;
                     if(board.get_capacity(i, j) == 5)
-                        tmp += 2;
+                        tmp += 5;
                     if(board.get_orbs_num(i, j) == (board.get_capacity(i, j)-1))
-                        tmp += 2;
+                        tmp += 5;
                 }
                 if(tmp > highest_score){
                     highest_score = tmp;
