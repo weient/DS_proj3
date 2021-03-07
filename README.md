@@ -9,3 +9,7 @@
 <img src="https://github.com/weient/DS_proj3/blob/94d097b8aa916fe7085e099b0b1cfbe15b755704/image.png" width="50%" height="50%" />
 
 * 一個格子只能有一種顏色，比如紅色棋子不能下在藍色棋子所佔領的格子；但若某格爆炸，其上的棋子全部散開到周圍，則周圍的格子都會變成爆炸格的顏色。
+
+![image](https://github.com/weient/DS_proj3/blob/da5e21c95dd90a9139182d4260fbe843fefc119b/image2.png)
+
+* 影片demo:
