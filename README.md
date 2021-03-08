@@ -14,5 +14,6 @@
 
 * 影片demo:
 
+（我設計的演算法為紅色玩家）
 ![video](https://user-images.githubusercontent.com/67552109/110297542-94e7c400-802e-11eb-883d-f0aac5ba8701.mp4)
 
