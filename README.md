@@ -13,3 +13,6 @@
 ![image](https://github.com/weient/DS_proj3/blob/da5e21c95dd90a9139182d4260fbe843fefc119b/image2.png)
 
 * 影片demo:
+
+![video](https://user-images.githubusercontent.com/67552109/110297542-94e7c400-802e-11eb-883d-f0aac5ba8701.mp4)
+
